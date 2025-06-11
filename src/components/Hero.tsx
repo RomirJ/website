@@ -11,34 +11,51 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center justify-center min-h-screen text-center space-y-8">
-          {/* Logo/Brand */}
-          <div className="flex items-center space-x-3 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-r from-teal-400 to-emerald-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">H</span>
-            </div>
-            <h1 className="text-3xl font-bold text-white">Hikaflow</h1>
+          {/* Logo */}
+          <div className="flex items-center justify-center mb-8">
+            <img 
+              src="/lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png" 
+              alt="Hikaflow Logo" 
+              className="h-16 md:h-20 w-auto"
+            />
           </div>
 
           {/* Main Headline */}
-          <div className="max-w-4xl">
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <div className="max-w-5xl">
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
               Your On-Demand
               <span className="block bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent">
                 AI Engineer
               </span>
               for Confident Releases
-            </h2>
-            <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed max-w-4xl mx-auto">
               Deeply integrated AI-powered assistant for fast-moving software teams. 
               Ship quickly without compromising on quality, documentation, or efficiency.
             </p>
+          </div>
+
+          {/* Key Benefits */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-4">
+              <h3 className="text-teal-400 font-semibold mb-2">Instant PR Reviews</h3>
+              <p className="text-slate-300 text-sm">AI-powered code reviews the moment you create a pull request</p>
+            </div>
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-4">
+              <h3 className="text-teal-400 font-semibold mb-2">80% Faster QA</h3>
+              <p className="text-slate-300 text-sm">Predictive testing reduces manual QA cycles dramatically</p>
+            </div>
+            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-4">
+              <h3 className="text-teal-400 font-semibold mb-2">Zero Onboarding</h3>
+              <p className="text-slate-300 text-sm">New hires become productive in minutes, not months</p>
+            </div>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white border-0 h-14 text-lg font-semibold group transition-all duration-300"
+              className="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white border-0 h-14 text-lg font-semibold group transition-all duration-300 shadow-lg shadow-teal-500/25"
               onClick={() => window.open('https://www.linkedin.com/company/hikaflow', '_blank')}
             >
               <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
