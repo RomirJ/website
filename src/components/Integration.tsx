@@ -104,9 +104,9 @@ const Integration = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 className="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-teal-500/25"
-                onClick={() => window.open('https://www.linkedin.com/company/hikaflow', '_blank')}
+                onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
               >
-                Start Free Trial
+                Try Hikaflow Free
               </button>
               <button 
                 className="border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition-all duration-300"

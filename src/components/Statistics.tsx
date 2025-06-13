@@ -83,21 +83,59 @@ const Statistics = () => {
           ))}
         </div>
 
+        {/* Living Documentation Feature */}
+        <div className="mt-20">
+          <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl p-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-3xl font-bold text-slate-900 mb-4">
+                  Living Documentation
+                </h3>
+                <p className="text-slate-600 mb-6 leading-relaxed text-lg">
+                  Hikaflow automatically generates and maintains up-to-date documentation for your codebase. 
+                  No more outdated docs or manual updates - your documentation evolves with your code.
+                </p>
+                <ul className="space-y-3 mb-6">
+                  {[
+                    "Auto-generated file summaries",
+                    "Real-time dependency tracking", 
+                    "Interactive code exploration",
+                    "AI-powered insights and explanations"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center text-slate-700">
+                      <div className="w-2 h-2 bg-emerald-500 rounded-full mr-3 flex-shrink-0"></div>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative">
+                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-green-600/20 rounded-xl blur-lg"></div>
+                <img 
+                  src="/lovable-uploads/c847fa1b-9644-47f3-81d8-4739428ae4f2.png" 
+                  alt="Hikaflow Living Documentation"
+                  className="relative w-full rounded-xl shadow-2xl border border-emerald-200"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl p-8 max-w-3xl mx-auto">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
-              "Hikaflow eliminated our deployment anxiety"
+              "Hikaflow transformed our entire development workflow"
             </h3>
-            <p className="text-slate-600 mb-6 leading-relaxed italic">
-              "We went from nerve-wracking Friday deployments to confident daily releases. The AI catches critical issues we would have missed, and our team velocity has doubled while maintaining zero production incidents."
+            <p className="text-slate-600 mb-6 leading-relaxed italic text-lg">
+              "With over 24 years in tech and 10+ years leading engineering teams, I've seen many tools come and go. Hikaflow is different - it actually delivers on its promises. Our team velocity increased dramatically while maintaining zero production incidents. The AI insights are incredibly accurate and the living documentation feature alone saves us hours every week."
             </p>
             <div className="flex items-center justify-center space-x-4">
               <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                S
+                A
               </div>
               <div className="text-left">
-                <div className="font-semibold text-slate-900">Sarah Chen</div>
-                <div className="text-slate-600 text-sm">VP Engineering, TechCorp</div>
+                <div className="font-semibold text-slate-900">Azhar Hussain</div>
+                <div className="text-slate-600 text-sm">CTO & Software Engineering Leader</div>
               </div>
             </div>
           </div>
