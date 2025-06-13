@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Calendar } from "lucide-react";
+import { ArrowRight, Play, Calendar, CheckCircle } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -10,72 +10,111 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="flex flex-col items-center justify-center min-h-screen text-center space-y-8">
-          {/* Logo */}
-          <div className="flex items-center justify-center mb-8">
-            <img 
-              src="/lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png" 
-              alt="Hikaflow Logo" 
-              className="h-16 md:h-20 w-auto"
-            />
-          </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+          {/* Left Column - Content */}
+          <div className="space-y-8">
+            {/* Logo */}
+            <div className="flex items-center mb-8">
+              <img 
+                src="/lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png" 
+                alt="Hikaflow Logo" 
+                className="h-12 md:h-16 w-auto"
+              />
+            </div>
 
-          {/* Main Headline */}
-          <div className="max-w-5xl">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-              Your On-Demand
-              <span className="block bg-gradient-to-r from-teal-400 to-emerald-500 bg-clip-text text-transparent">
-                AI Engineer
-              </span>
-              for Confident Releases
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed max-w-4xl mx-auto">
-              Deeply integrated AI-powered assistant for fast-moving software teams. 
-              Ship quickly without compromising on quality, documentation, or efficiency.
+            {/* Badge */}
+            <div className="inline-flex items-center bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 text-emerald-400 text-sm font-medium">
+              <CheckCircle className="h-4 w-4 mr-2" />
+              Trusted by 500+ Engineering Teams
+            </div>
+
+            {/* Main Headline */}
+            <div>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                Your On-Demand
+                <span className="block bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent">
+                  AI Engineer
+                </span>
+                for Confident Releases
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
+                Deeply integrated AI-powered assistant for fast-moving software teams. 
+                Ship quickly without compromising on quality, documentation, or efficiency.
+              </p>
+            </div>
+
+            {/* Key Benefits */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 hover:border-emerald-500/30 transition-all">
+                <div className="text-emerald-400 font-bold text-lg mb-1">80%</div>
+                <p className="text-slate-300 text-sm">Faster QA Cycles</p>
+              </div>
+              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 hover:border-emerald-500/30 transition-all">
+                <div className="text-emerald-400 font-bold text-lg mb-1">5 min</div>
+                <p className="text-slate-300 text-sm">Setup Time</p>
+              </div>
+              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-xl p-4 hover:border-emerald-500/30 transition-all">
+                <div className="text-emerald-400 font-bold text-lg mb-1">24/7</div>
+                <p className="text-slate-300 text-sm">AI Reviews</p>
+              </div>
+            </div>
+
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 h-16 text-lg font-semibold group transition-all duration-300 shadow-xl shadow-emerald-500/25"
+                onClick={() => window.open('https://www.linkedin.com/company/hikaflow', '_blank')}
+              >
+                <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                Watch Demo & Start Free
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white h-16 text-lg font-semibold group transition-all duration-300"
+                onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
+              >
+                <Calendar className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                Book Personal Demo
+              </Button>
+            </div>
+
+            <p className="text-slate-400 text-sm">
+              No credit card required • Connect in under 5 minutes • See results immediately
             </p>
           </div>
 
-          {/* Key Benefits */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
-            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-4">
-              <h3 className="text-teal-400 font-semibold mb-2">Instant PR Reviews</h3>
-              <p className="text-slate-300 text-sm">AI-powered code reviews the moment you create a pull request</p>
+          {/* Right Column - Dashboard Image */}
+          <div className="relative">
+            <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-green-600/20 rounded-2xl blur-2xl"></div>
+            <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-4 hover:border-emerald-500/30 transition-all duration-500">
+              <img 
+                src="/lovable-uploads/e910e95d-3ed7-4a18-a018-c315f42aeacb.png" 
+                alt="Hikaflow Impact Analysis Dashboard"
+                className="w-full rounded-xl shadow-2xl"
+              />
+              <div className="absolute top-8 right-8 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+                Live Dashboard
+              </div>
             </div>
-            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-4">
-              <h3 className="text-teal-400 font-semibold mb-2">80% Faster QA</h3>
-              <p className="text-slate-300 text-sm">Predictive testing reduces manual QA cycles dramatically</p>
+            
+            {/* Floating Stats */}
+            <div className="absolute -bottom-4 -left-4 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-xl p-4">
+              <div className="text-emerald-400 font-bold text-2xl">51</div>
+              <div className="text-slate-300 text-sm">Critical Flows Analyzed</div>
             </div>
-            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-4">
-              <h3 className="text-teal-400 font-semibold mb-2">Zero Onboarding</h3>
-              <p className="text-slate-300 text-sm">New hires become productive in minutes, not months</p>
+            
+            <div className="absolute -top-4 -right-4 bg-slate-800/90 backdrop-blur-sm border border-emerald-500/30 rounded-xl p-4">
+              <div className="text-emerald-400 font-bold text-2xl">8.9</div>
+              <div className="text-slate-300 text-sm">Avg Impact Score</div>
             </div>
           </div>
+        </div>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-md">
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white border-0 h-14 text-lg font-semibold group transition-all duration-300 shadow-lg shadow-teal-500/25"
-              onClick={() => window.open('https://www.linkedin.com/company/hikaflow', '_blank')}
-            >
-              <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Watch Demo
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white h-14 text-lg font-semibold group transition-all duration-300"
-              onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
-            >
-              <Calendar className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Book Meeting
-            </Button>
-          </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ArrowRight className="h-6 w-6 text-slate-400 rotate-90" />
-          </div>
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <ArrowRight className="h-6 w-6 text-slate-400 rotate-90" />
         </div>
       </div>
     </section>
