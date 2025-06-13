@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BarChart3, MessageSquare, Shield, Brain, GitPullRequest, Settings } from "lucide-react";
+import { BarChart3, MessageSquare, Shield, Brain, GitPullRequest, Settings, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const ProductDemo = () => {
   const features = [
@@ -45,6 +46,13 @@ const ProductDemo = () => {
       description: "Configure which security issues and code quality checks Hikaflow should flag for your team.",
       image: "/lovable-uploads/bade8b73-380b-4272-86d3-2cf66be78466.png",
       features: ["Custom rule configuration", "Team-specific settings", "Compliance enforcement"]
+    },
+    {
+      icon: FileText,
+      title: "Living Documentation",
+      description: "Automatically generated and maintained documentation that evolves with your codebase, keeping your team aligned.",
+      image: "/lovable-uploads/c847fa1b-9644-47f3-81d8-4739428ae4f2.png",
+      features: ["Auto-generated docs", "Real-time updates", "Team collaboration"]
     }
   ];
 
@@ -119,6 +127,12 @@ const ProductDemo = () => {
               Connect your repository in minutes and start getting intelligent insights into your codebase.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                className="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-teal-500/25"
+                onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
+              >
+                Try Hikaflow Free
+              </Button>
               <button 
                 className="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-teal-500/25"
                 onClick={() => window.open('https://www.linkedin.com/company/hikaflow', '_blank')}

@@ -7,6 +7,7 @@ import ProductDemo from "@/components/ProductDemo";
 import Statistics from "@/components/Statistics";
 import Integration from "@/components/Integration";
 import CTA from "@/components/CTA";
+import ContactUs from "@/components/ContactUs";
 
 const Index = () => {
   return (
@@ -30,6 +31,9 @@ const Index = () => {
       </div>
       <div id="cta">
         <CTA />
+      </div>
+      <div id="contact">
+        <ContactUs />
       </div>
     </div>
   );

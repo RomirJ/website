@@ -18,10 +18,10 @@ const Navigation = () => {
     { label: "Home", id: "hero" },
     { label: "Features", id: "features" },
     { label: "AI Modes", id: "ai-modes" },
-    { label: "Demo", id: "demo" },
+    { label: "Screenshots", id: "demo" },
     { label: "Statistics", id: "statistics" },
     { label: "Integration", id: "integration" },
-    { label: "Get Started", id: "cta" }
+    { label: "Contact", id: "contact" }
   ];
 
   return (
@@ -33,7 +33,7 @@ const Navigation = () => {
             <img 
               src="/lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png" 
               alt="Hikaflow Logo" 
-              className="h-8 w-auto hover:scale-105 transition-transform duration-300"
+              className="h-10 w-auto hover:scale-105 transition-transform duration-300"
             />
           </div>
 
@@ -53,7 +53,7 @@ const Navigation = () => {
               onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
               className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105"
             >
-              Get Started
+              Ship Now
             </Button>
           </div>
 
@@ -87,7 +87,7 @@ const Navigation = () => {
                 onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
                 className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300"
               >
-                Get Started
+                Ship Now
               </Button>
             </div>
           </div>

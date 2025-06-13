@@ -13,15 +13,6 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
           {/* Left Column - Content */}
           <div className="space-y-8 animate-fade-in">
-            {/* Logo */}
-            <div className="flex items-center mb-8">
-              <img 
-                src="/lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png" 
-                alt="Hikaflow Logo" 
-                className="h-12 md:h-16 w-auto hover:scale-110 transition-transform duration-500"
-              />
-            </div>
-
             {/* Badge */}
             <div className="inline-flex items-center bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 text-emerald-400 text-sm font-medium animate-pulse">
               <CheckCircle className="h-4 w-4 mr-2" />
@@ -67,7 +58,7 @@ const Hero = () => {
                 onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Start Free Trial
+                Try Hikaflow Free
               </Button>
               <Button 
                 size="lg" 
