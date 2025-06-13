@@ -63,12 +63,12 @@ const Features = () => {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+    <section id="features" className="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-slate-200/50 bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center bg-emerald-50 border border-emerald-200 rounded-full px-4 py-2 text-emerald-700 text-sm font-medium mb-6">
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="inline-flex items-center bg-emerald-50 border border-emerald-200 rounded-full px-4 py-2 text-emerald-700 text-sm font-medium mb-6 hover:scale-105 transition-transform duration-300">
             Complete Engineering Solution
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
@@ -85,15 +85,15 @@ const Features = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-slate-200 hover:border-emerald-200 bg-white/80 backdrop-blur-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-emerald-500 text-white px-3 py-1 rounded-bl-lg text-xs font-medium">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-slate-200 hover:border-emerald-200 bg-white/80 backdrop-blur-sm relative overflow-hidden hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+              <div className="absolute top-0 right-0 bg-emerald-500 text-white px-3 py-1 rounded-bl-lg text-xs font-medium transition-all duration-300 group-hover:bg-green-600">
                 {feature.highlight}
               </div>
               <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
-                <CardTitle className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                <CardTitle className="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors duration-300">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
@@ -103,8 +103,8 @@ const Features = () => {
                 </p>
                 <ul className="space-y-1">
                   {feature.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-center text-slate-700">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2 flex-shrink-0"></div>
+                    <li key={i} className="flex items-center text-slate-700 group-hover:text-slate-800 transition-colors duration-300">
+                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
                       <span className="text-xs">{benefit}</span>
                     </li>
                   ))}
@@ -114,8 +114,8 @@ const Features = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl p-8 max-w-4xl mx-auto">
+        <div className="mt-16 text-center animate-fade-in [animation-delay:800ms]">
+          <div className="bg-gradient-to-r from-emerald-50 to-green-50 border border-emerald-200 rounded-2xl p-8 max-w-4xl mx-auto hover:scale-105 transition-transform duration-500">
             <h3 className="text-2xl font-bold text-slate-900 mb-4">
               Ready to Transform Your Development Workflow?
             </h3>
@@ -125,13 +125,13 @@ const Features = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
               <button 
-                className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-emerald-500/25"
-                onClick={() => window.open('https://www.linkedin.com/company/hikaflow', '_blank')}
+                className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:scale-105"
+                onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
               >
                 Start Free Trial
               </button>
               <button 
-                className="border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                className="border border-slate-300 text-slate-700 hover:bg-slate-50 hover:border-slate-400 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
                 onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
               >
                 Schedule Demo
