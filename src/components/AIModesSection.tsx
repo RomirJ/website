@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, UserCheck, Search, Building, GitBranch } from "lucide-react";
 
@@ -75,9 +74,11 @@ const AIModesSection = () => {
         </div>
 
         <div className="mt-12 text-center animate-fade-in" style={{animationDelay: '600ms'}}>
-          <div className="inline-flex items-center space-x-2 bg-slate-800/50 border border-slate-700 rounded-full px-6 py-3 hover:scale-105 transition-transform duration-300">
-            <span className="text-slate-300">Result:</span>
-            <span className="font-semibold text-white">New hires become productive within minutes, resolving critical bugs and generating reports with full project context</span>
+          <div className="inline-flex flex-col items-center space-y-3 bg-slate-800/50 border border-slate-700 rounded-2xl px-8 py-6 hover:scale-105 transition-transform duration-300 max-w-4xl">
+            <span className="text-emerald-400 font-medium text-sm uppercase tracking-wide">Result</span>
+            <span className="font-semibold text-white text-lg leading-relaxed text-center">
+              New hires become productive within minutes, resolving critical bugs and generating reports with full project context
+            </span>
           </div>
         </div>
       </div>
