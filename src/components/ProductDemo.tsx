@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart3, MessageSquare, Shield, Brain, GitPullRequest, Settings, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -140,8 +139,7 @@ const ProductDemo = () => {
                 Watch Demo Video
               </Button>
               <Button 
-                variant="outline"
-                className="border border-slate-600 text-slate-200 hover:bg-slate-800 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 h-12"
+                className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:scale-105 h-12"
                 onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
               >
                 Schedule Meeting
