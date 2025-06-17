@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-20 rounded-none">
           {/* Left Column - Content */}
           <div className="space-y-8 animate-fade-in">
             {/* Badge */}
@@ -20,7 +20,7 @@ const Hero = () => {
             <div className="animate-fade-in [animation-delay:200ms]">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
                 Your On-Demand
-                <span className="block bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent animate-pulse leading-relaxed py-2 text-7xl">
+                <span className="block bg-gradient-to-r from-emerald-400 to-green-500 bg-clip-text text-transparent animate-pulse leading-relaxed py-2 text-6xl">
                   AI Engineer
                 </span>
                 for Confident Releases
