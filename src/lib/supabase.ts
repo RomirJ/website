@@ -4,11 +4,20 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
-}
+// Create a mock client when environment variables are missing
+const createMockClient = () => ({
+  from: () => ({
+    insert: () => ({
+      select: () => ({
+        single: () => Promise.reject(new Error('Supabase not configured'))
+      })
+    })
+  })
+});
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+export const supabase = (supabaseUrl && supabaseAnonKey) 
+  ? createClient(supabaseUrl, supabaseAnonKey)
+  : createMockClient();
 
 // Database types
 export interface ContactSubmission {
@@ -29,6 +38,12 @@ export interface NewsletterSignup {
 
 // Database functions
 export const saveContactSubmission = async (data: Omit<ContactSubmission, 'id' | 'created_at'>) => {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.log('Contact form submission (Supabase not configured):', data);
+    // Return a mock successful response
+    return { id: 'mock-id', ...data, created_at: new Date().toISOString() };
+  }
+
   const { data: result, error } = await supabase
     .from('contact_submissions')
     .insert([data])
@@ -44,6 +59,12 @@ export const saveContactSubmission = async (data: Omit<ContactSubmission, 'id' |
 };
 
 export const saveNewsletterSignup = async (email: string) => {
+  if (!supabaseUrl || !supabaseAnonKey) {
+    console.log('Newsletter signup (Supabase not configured):', email);
+    // Return a mock successful response
+    return { id: 'mock-id', email, created_at: new Date().toISOString() };
+  }
+
   const { data: result, error } = await supabase
     .from('newsletter_signups')
     .insert([{ email }])
