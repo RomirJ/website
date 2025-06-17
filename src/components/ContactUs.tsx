@@ -3,7 +3,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Send, CheckCircle, Linkedin } from "lucide-react";
+import { Mail, Phone, Send, CheckCircle, Linkedin, AlertCircle } from "lucide-react";
+import { saveContactSubmission, saveNewsletterSignup } from "@/lib/supabase";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -17,26 +18,57 @@ const ContactUs = () => {
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isNewsletterSubmitted, setIsNewsletterSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isNewsletterSubmitting, setIsNewsletterSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [newsletterError, setNewsletterError] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
-    setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+    setIsSubmitting(true);
+    setError("");
+
+    try {
+      await saveContactSubmission({
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        email: formData.email,
+        phone: formData.phone || undefined,
+        message: formData.message
+      });
+
+      setIsSubmitted(true);
+      setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      setError("Failed to send message. Please try again.");
+      console.error("Contact form error:", err);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Newsletter signup:", newsletterEmail);
-    setIsNewsletterSubmitted(true);
-    setTimeout(() => setIsNewsletterSubmitted(false), 3000);
-    setNewsletterEmail("");
+    setIsNewsletterSubmitting(true);
+    setNewsletterError("");
+
+    try {
+      await saveNewsletterSignup(newsletterEmail);
+      setIsNewsletterSubmitted(true);
+      setNewsletterEmail("");
+      setTimeout(() => setIsNewsletterSubmitted(false), 5000);
+    } catch (err) {
+      setNewsletterError("Failed to subscribe. Please try again.");
+      console.error("Newsletter signup error:", err);
+    } finally {
+      setIsNewsletterSubmitting(false);
+    }
   };
 
   return (
@@ -92,21 +124,31 @@ const ContactUs = () => {
                   <span>Thank you for subscribing!</span>
                 </div>
               ) : (
-                <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    required
-                    className="flex-1 bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-emerald-500"
-                  />
-                  <Button 
-                    type="submit" 
-                    className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105"
-                  >
-                    Subscribe
-                  </Button>
+                <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      value={newsletterEmail}
+                      onChange={(e) => setNewsletterEmail(e.target.value)}
+                      required
+                      className="flex-1 bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-emerald-500"
+                      disabled={isNewsletterSubmitting}
+                    />
+                    <Button 
+                      type="submit" 
+                      disabled={isNewsletterSubmitting}
+                      className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105 disabled:opacity-50"
+                    >
+                      {isNewsletterSubmitting ? "Subscribing..." : "Subscribe"}
+                    </Button>
+                  </div>
+                  {newsletterError && (
+                    <div className="flex items-center text-red-400 text-sm">
+                      <AlertCircle className="h-4 w-4 mr-2" />
+                      {newsletterError}
+                    </div>
+                  )}
                 </form>
               )}
             </div>
@@ -138,6 +180,7 @@ const ContactUs = () => {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
+                        disabled={isSubmitting}
                         className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-emerald-500 transition-all duration-300"
                       />
                     </div>
@@ -151,6 +194,7 @@ const ContactUs = () => {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
+                        disabled={isSubmitting}
                         className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-emerald-500 transition-all duration-300"
                       />
                     </div>
@@ -166,6 +210,7 @@ const ContactUs = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
+                      disabled={isSubmitting}
                       className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-emerald-500 transition-all duration-300"
                     />
                   </div>
@@ -179,6 +224,7 @@ const ContactUs = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
+                      disabled={isSubmitting}
                       className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-emerald-500 transition-all duration-300"
                     />
                   </div>
@@ -193,16 +239,25 @@ const ContactUs = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       required
+                      disabled={isSubmitting}
                       className="bg-slate-700/50 border-slate-600 text-white placeholder:text-slate-400 focus:border-emerald-500 transition-all duration-300 resize-none"
                     />
                   </div>
                   
+                  {error && (
+                    <div className="flex items-center text-red-400 text-sm">
+                      <AlertCircle className="h-4 w-4 mr-2" />
+                      {error}
+                    </div>
+                  )}
+                  
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold h-12 transition-all duration-300 hover:scale-105 group"
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold h-12 transition-all duration-300 hover:scale-105 group disabled:opacity-50"
                   >
                     <Send className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               )}
