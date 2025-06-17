@@ -86,11 +86,11 @@ const Features = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-slate-700 hover:border-emerald-500/30 bg-slate-800/50 backdrop-blur-sm relative overflow-hidden hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-              <div className="absolute top-0 right-0 bg-emerald-500 text-white px-3 py-1 rounded-bl-lg text-xs font-medium transition-all duration-300 group-hover:bg-green-600">
+              <div className="absolute top-0 right-0 bg-emerald-500 text-white px-3 py-1 rounded-bl-lg text-xs font-medium transition-all duration-300 group-hover:bg-green-600 mr-3 mt-3">
                 {feature.highlight}
               </div>
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+              <CardHeader className="pb-4 pt-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                   <feature.icon className="h-6 w-6 text-white" />
                 </div>
                 <CardTitle className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">

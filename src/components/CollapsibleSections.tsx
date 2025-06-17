@@ -66,17 +66,17 @@ const CollapsibleSections = () => {
                 <Button
                   variant="ghost"
                   onClick={() => toggleSection(section.id)}
-                  className="w-full p-6 text-left flex items-center justify-between hover:bg-slate-700/30 transition-all duration-300"
+                  className="w-full p-8 text-left flex items-center justify-between hover:bg-slate-700/30 transition-all duration-300"
                 >
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-1">
+                  <div className="flex-1 pr-4">
+                    <h3 className="text-xl font-semibold text-white mb-2">
                       {section.title}
                     </h3>
                     <p className="text-slate-400 text-sm">
                       {section.subtitle}
                     </p>
                   </div>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-2 flex-shrink-0">
                     <span className="text-emerald-400 text-sm font-medium">
                       {isOpen ? 'Collapse' : 'Expand'}
                     </span>

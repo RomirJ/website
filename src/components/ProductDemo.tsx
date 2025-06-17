@@ -123,9 +123,11 @@ const ProductDemo = () => {
             <div className="order-1 lg:order-2 relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-lg opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
               <img 
+                key={currentIndex}
                 src={features[currentIndex].image} 
                 alt={features[currentIndex].title}
-                className="relative w-full rounded-lg shadow-2xl border border-slate-700 hover:shadow-teal-500/10 transition-all duration-300"
+                className="relative w-full rounded-lg shadow-2xl border border-slate-700 hover:shadow-teal-500/10 transition-all duration-500 opacity-0 animate-fade-in"
+                style={{ animation: 'fade-in 0.5s ease-in-out forwards' }}
               />
             </div>
           </div>
@@ -167,6 +169,12 @@ const ProductDemo = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
             {features.map((feature, index) => {
               const FeatureIcon = feature.icon;
+              const getIconLabel = (title: string) => {
+                if (title === "Project Assistant") return "Assistant";
+                if (title === "Living Documentation") return "Documentation";
+                return title.split(' ')[0];
+              };
+              
               return (
                 <button
                   key={index}
@@ -183,7 +191,7 @@ const ProductDemo = () => {
                   <p className={`text-xs mt-1 ${
                     index === currentIndex ? 'text-teal-300' : 'text-slate-500'
                   }`}>
-                    {feature.title.split(' ')[0]}
+                    {getIconLabel(feature.title)}
                   </p>
                 </button>
               );

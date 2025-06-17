@@ -50,9 +50,9 @@ const Statistics = () => {
           <div className="inline-flex items-center bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-2 text-emerald-400 text-sm font-medium mb-6 hover:scale-105 transition-transform duration-300 animate-pulse">
             Proven Results
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 hover:scale-105 transition-transform duration-500">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 hover:scale-105 transition-transform duration-500 leading-tight">
             Trusted by Engineering Teams
-            <span className="block bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent leading-tight">
               Delivering Results
             </span>
           </h2>

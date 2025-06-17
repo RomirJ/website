@@ -16,12 +16,9 @@ const Navigation = () => {
 
   const menuItems = [
     { label: "Home", id: "hero" },
-    { label: "Features", id: "features" },
-    { label: "AI Modes", id: "ai-modes" },
     { label: "Screenshots", id: "demo" },
-    { label: "Statistics", id: "statistics" },
-    { label: "Integration", id: "integration" },
-    { label: "Contact", id: "contact" }
+    { label: "Capabilities", id: "features" },
+    { label: "Contact Us", id: "contact" }
   ];
 
   return (
@@ -55,7 +52,7 @@ const Navigation = () => {
               className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105 animate-fade-in"
               style={{animationDelay: `${menuItems.length * 100}ms`}}
             >
-              Ship Now
+              Try Now
             </Button>
           </div>
 
@@ -90,7 +87,7 @@ const Navigation = () => {
                 onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
                 className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105"
               >
-                Ship Now
+                Try Now
               </Button>
             </div>
           </div>
