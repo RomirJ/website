@@ -88,17 +88,14 @@ const ProductDemo = () => {
           </p>
         </div>
 
-        {/* Carousel Container */}
         <div className="relative max-w-6xl mx-auto">
-          {/* Main Display */}
           <div className="grid lg:grid-cols-2 gap-8 items-center mb-8">
-            {/* Feature Info */}
             <div className="order-2 lg:order-1">
               <Card className="bg-slate-800/50 border-slate-700 backdrop-blur-sm hover:bg-slate-800/70 transition-all duration-300">
                 <CardHeader>
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                      <features[currentIndex].icon className="h-6 w-6 text-white" />
+                      {features[currentIndex].icon && <features[currentIndex].icon className="h-6 w-6 text-white" />}
                     </div>
                     <CardTitle className="text-xl font-bold text-white hover:text-teal-300 transition-colors duration-300">
                       {features[currentIndex].title}
@@ -121,7 +118,6 @@ const ProductDemo = () => {
               </Card>
             </div>
             
-            {/* Screenshot */}
             <div className="order-1 lg:order-2 relative group">
               <div className="absolute -inset-4 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-lg opacity-20 group-hover:opacity-30 transition-opacity blur-lg"></div>
               <img 
@@ -132,7 +128,6 @@ const ProductDemo = () => {
             </div>
           </div>
 
-          {/* Navigation Controls */}
           <div className="flex items-center justify-center space-x-4 mb-6">
             <Button
               variant="outline"
@@ -167,7 +162,6 @@ const ProductDemo = () => {
             </Button>
           </div>
 
-          {/* Feature Thumbnails */}
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
             {features.map((feature, index) => (
               <button
@@ -179,9 +173,9 @@ const ProductDemo = () => {
                     : 'border-slate-700 bg-slate-800/30 hover:border-slate-600'
                 }`}
               >
-                <feature.icon className={`h-4 w-4 mx-auto ${
+                {feature.icon && <feature.icon className={`h-4 w-4 mx-auto ${
                   index === currentIndex ? 'text-teal-400' : 'text-slate-400'
-                }`} />
+                }`} />}
                 <p className={`text-xs mt-1 ${
                   index === currentIndex ? 'text-teal-300' : 'text-slate-500'
                 }`}>
@@ -192,7 +186,6 @@ const ProductDemo = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
         <div className="mt-16 text-center animate-fade-in">
           <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-6 backdrop-blur-sm max-w-xl mx-auto hover:scale-105 transition-transform duration-500">
             <h3 className="text-2xl font-bold text-white mb-3 hover:text-teal-300 transition-colors duration-300">
