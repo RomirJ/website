@@ -71,6 +71,8 @@ const ProductDemo = () => {
     setCurrentIndex(index);
   };
 
+  const CurrentIcon = features[currentIndex].icon;
+
   return (
     <section className="py-16 bg-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
@@ -95,7 +97,7 @@ const ProductDemo = () => {
                 <CardHeader>
                   <div className="flex items-center space-x-4 mb-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-teal-500 to-emerald-600 rounded-lg flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                      {features[currentIndex].icon && <features[currentIndex].icon className="h-6 w-6 text-white" />}
+                      <CurrentIcon className="h-6 w-6 text-white" />
                     </div>
                     <CardTitle className="text-xl font-bold text-white hover:text-teal-300 transition-colors duration-300">
                       {features[currentIndex].title}
@@ -163,26 +165,29 @@ const ProductDemo = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
-            {features.map((feature, index) => (
-              <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`p-2 rounded-lg border transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'border-teal-400 bg-teal-500/10'
-                    : 'border-slate-700 bg-slate-800/30 hover:border-slate-600'
-                }`}
-              >
-                {feature.icon && <feature.icon className={`h-4 w-4 mx-auto ${
-                  index === currentIndex ? 'text-teal-400' : 'text-slate-400'
-                }`} />}
-                <p className={`text-xs mt-1 ${
-                  index === currentIndex ? 'text-teal-300' : 'text-slate-500'
-                }`}>
-                  {feature.title.split(' ')[0]}
-                </p>
-              </button>
-            ))}
+            {features.map((feature, index) => {
+              const FeatureIcon = feature.icon;
+              return (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`p-2 rounded-lg border transition-all duration-300 ${
+                    index === currentIndex
+                      ? 'border-teal-400 bg-teal-500/10'
+                      : 'border-slate-700 bg-slate-800/30 hover:border-slate-600'
+                  }`}
+                >
+                  <FeatureIcon className={`h-4 w-4 mx-auto ${
+                    index === currentIndex ? 'text-teal-400' : 'text-slate-400'
+                  }`} />
+                  <p className={`text-xs mt-1 ${
+                    index === currentIndex ? 'text-teal-300' : 'text-slate-500'
+                  }`}>
+                    {feature.title.split(' ')[0]}
+                  </p>
+                </button>
+              );
+            })}
           </div>
         </div>
 
