@@ -55,7 +55,7 @@ const CollapsibleSections = () => {
                   className="w-full p-8 text-left flex items-center justify-between hover:bg-slate-700/30 transition-all duration-300"
                 >
                   <div className="flex-1 pr-4">
-                    <h3 className="text-xl font-semibold text-white mb-2">
+                    <h3 className="text-xl font-semibold text-white mb-4">
                       {section.title}
                     </h3>
                     <p className="text-slate-400 text-sm">
