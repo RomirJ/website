@@ -2,10 +2,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Features from "./Features";
 import AIModesSection from "./AIModesSection";
-import Statistics from "./Statistics";
-import Integration from "./Integration";
 
 const CollapsibleSections = () => {
   const [openSections, setOpenSections] = useState<string[]>([]);
@@ -20,28 +17,10 @@ const CollapsibleSections = () => {
 
   const sections = [
     {
-      id: "features",
-      title: "Core Features",
-      subtitle: "Discover what makes Hikaflow powerful",
-      component: <Features />
-    },
-    {
       id: "ai-modes",
       title: "AI Capabilities",
       subtitle: "Explore our intelligent automation",
       component: <AIModesSection />
-    },
-    {
-      id: "statistics",
-      title: "Performance Metrics",
-      subtitle: "See the impact in numbers",
-      component: <Statistics />
-    },
-    {
-      id: "integration",
-      title: "Seamless Integration",
-      subtitle: "Connect with your existing tools",
-      component: <Integration />
     }
   ];
 
@@ -98,27 +77,6 @@ const CollapsibleSections = () => {
               </div>
             );
           })}
-        </div>
-
-        {/* Quick Access Buttons */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex space-x-2 bg-slate-800/50 rounded-full p-2 border border-slate-700">
-            {sections.map((section) => (
-              <Button
-                key={section.id}
-                variant={openSections.includes(section.id) ? "default" : "ghost"}
-                size="sm"
-                onClick={() => toggleSection(section.id)}
-                className={`rounded-full transition-all duration-300 ${
-                  openSections.includes(section.id)
-                    ? 'bg-emerald-500 text-white'
-                    : 'text-slate-300 hover:text-emerald-400'
-                }`}
-              >
-                {section.title.split(' ')[0]}
-              </Button>
-            ))}
-          </div>
         </div>
       </div>
     </section>

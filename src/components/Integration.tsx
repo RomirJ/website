@@ -86,7 +86,7 @@ const Integration = () => {
               and insights. Your team can continue using their existing tools and workflows.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div className="bg-slate-700/50 rounded-lg p-4 border border-slate-600 hover:border-teal-400/30 transition-all duration-300 hover:scale-105">
                 <h4 className="font-semibold text-white mb-2">GitHub Integration</h4>
                 <p className="text-sm text-slate-300">Seamless PR comments and status checks</p>
@@ -94,10 +94,6 @@ const Integration = () => {
               <div className="bg-slate-700/50 rounded-lg p-4 border border-slate-600 hover:border-teal-400/30 transition-all duration-300 hover:scale-105">
                 <h4 className="font-semibold text-white mb-2">Bitbucket Support</h4>
                 <p className="text-sm text-slate-300">Full compatibility with Bitbucket workflows</p>
-              </div>
-              <div className="bg-slate-700/50 rounded-lg p-4 border border-slate-600 hover:border-teal-400/30 transition-all duration-300 hover:scale-105">
-                <h4 className="font-semibold text-white mb-2">Repository Upload</h4>
-                <p className="text-sm text-slate-300">Analyze any codebase without Git integration</p>
               </div>
             </div>
             

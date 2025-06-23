@@ -82,7 +82,7 @@ const ProductDemo = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 hover:scale-105 transition-transform duration-500">
             See Hikaflow in Action
             <span className="block bg-gradient-to-r from-teal-400 to-emerald-400 bg-clip-text text-transparent text-2xl md:text-3xl">
-              Interactive Screenshots
+              Interactive Features
             </span>
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">

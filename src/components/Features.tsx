@@ -1,33 +1,20 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { GitPullRequest, Shield, Brain, Zap, FileText, Users, TrendingUp, Clock } from "lucide-react";
 
 const Features = () => {
   const features = [
     {
-      icon: GitPullRequest,
-      title: "AI-Powered PR Reviews",
-      description: "Instant, intelligent pull request analysis with contextual feedback on code quality, security, and best practices.",
-      benefits: ["Consistent review quality", "Zero waiting time", "Learn from team patterns"],
-      highlight: "Every PR reviewed instantly"
-    },
-    {
-      icon: Shield,
-      title: "Security & Compliance",
-      description: "Real-time detection of vulnerabilities, exposed secrets, and compliance violations before they reach production.",
-      benefits: ["SOC 2, HIPAA compliance", "Zero-day vulnerability alerts", "Custom security rules"],
-      highlight: "99.9% security coverage"
-    },
-    {
       icon: Brain,
-      title: "5-Mode AI Assistant",
+      title: "AI Assistant",
       description: "AI assistant with full repository context featuring Standard Analysis, Senior Dev Review, Code Review, Architecture Analysis, and Release Analysis modes.",
       benefits: ["5 specialized analysis modes", "Instant architecture insights", "Expert-level guidance"],
       highlight: "Full codebase intelligence"
     },
     {
       icon: Zap,
-      title: "Impact Analysis",
+      title: "Regression Testing",
       description: "Predict which parts of your application could break and generate targeted test cases after every merge.",
       benefits: ["80% reduction in QA time", "Prevent production issues", "Smart test generation"],
       highlight: "Predictive testing"
@@ -40,18 +27,32 @@ const Features = () => {
       highlight: "Auto-generated docs"
     },
     {
-      icon: Users,
-      title: "Team Intelligence",
-      description: "Monitor engineering health, workflow bottlenecks, and team productivity with burnout prevention and performance insights.",
-      benefits: ["Burnout prevention", "Workflow optimization", "Performance insights"],
-      highlight: "Engineering analytics"
-    },
-    {
       icon: TrendingUp,
       title: "Executive Reporting",
       description: "Comprehensive reports for leadership with code quality trends, security metrics, and ROI visibility.",
       benefits: ["Executive dashboards", "ROI tracking", "Automated reports"],
       highlight: "Leadership visibility"
+    },
+    {
+      icon: GitPullRequest,
+      title: "PR Analysis",
+      description: "Instant, intelligent pull request analysis with contextual feedback on code quality, security, and best practices.",
+      benefits: ["Consistent review quality", "Zero waiting time", "Learn from team patterns"],
+      highlight: "Every PR reviewed instantly"
+    },
+    {
+      icon: Shield,
+      title: "Security & Compliance",
+      description: "Real-time detection of vulnerabilities, exposed secrets, and compliance violations before they reach production.",
+      benefits: ["SOC 2, HIPAA compliance", "Zero-day vulnerability alerts", "Custom security rules"],
+      highlight: "99.9% security coverage"
+    },
+    {
+      icon: Users,
+      title: "Team Intelligence",
+      description: "Monitor engineering health, workflow bottlenecks, and team productivity with burnout prevention and performance insights.",
+      benefits: ["Burnout prevention", "Workflow optimization", "Performance insights"],
+      highlight: "Engineering analytics"
     },
     {
       icon: Clock,
@@ -83,35 +84,49 @@ const Features = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-500 border-slate-700 hover:border-emerald-500/30 bg-slate-800/50 backdrop-blur-sm relative overflow-hidden hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
-              <div className="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1 rounded-bl-lg text-xs font-medium transition-all duration-300 group-hover:bg-green-600">
-                {feature.highlight}
-              </div>
-              <CardHeader className="pb-4 pt-12">
-                <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                  <feature.icon className="h-6 w-6 text-white" />
-                </div>
-                <CardTitle className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
-                  {feature.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-300 mb-4 leading-relaxed text-sm">
-                  {feature.description}
-                </p>
-                <ul className="space-y-1">
-                  {feature.benefits.map((benefit, i) => (
-                    <li key={i} className="flex items-center text-slate-300 group-hover:text-slate-200 transition-colors duration-300">
-                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
-                      <span className="text-xs">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="max-w-6xl mx-auto">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-4">
+              {features.map((feature, index) => (
+                <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="h-full group hover:shadow-xl transition-all duration-500 border-slate-700 hover:border-emerald-500/30 bg-slate-800/50 backdrop-blur-sm relative overflow-hidden hover:scale-105 animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
+                    <div className="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1 rounded-bl-lg text-xs font-medium transition-all duration-300 group-hover:bg-green-600">
+                      {feature.highlight}
+                    </div>
+                    <CardHeader className="pb-4 pt-12">
+                      <div className="w-12 h-12 bg-gradient-to-r from-emerald-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                        <feature.icon className="h-6 w-6 text-white" />
+                      </div>
+                      <CardTitle className="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors duration-300">
+                        {feature.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-slate-300 mb-4 leading-relaxed text-sm">
+                        {feature.description}
+                      </p>
+                      <ul className="space-y-1">
+                        {feature.benefits.map((benefit, i) => (
+                          <li key={i} className="flex items-center text-slate-300 group-hover:text-slate-200 transition-colors duration-300">
+                            <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-300"></div>
+                            <span className="text-xs">{benefit}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="border-slate-600 bg-slate-800/50 text-slate-300 hover:bg-slate-700 hover:border-emerald-400" />
+            <CarouselNext className="border-slate-600 bg-slate-800/50 text-slate-300 hover:bg-slate-700 hover:border-emerald-400" />
+          </Carousel>
         </div>
 
         <div className="mt-16 text-center animate-fade-in [animation-delay:800ms]">

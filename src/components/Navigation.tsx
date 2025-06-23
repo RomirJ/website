@@ -16,7 +16,7 @@ const Navigation = () => {
 
   const menuItems = [
     { label: "Home", id: "hero" },
-    { label: "Screenshots", id: "demo" },
+    { label: "Features", id: "demo" },
     { label: "Capabilities", id: "features" },
     { label: "Contact Us", id: "contact" }
   ];

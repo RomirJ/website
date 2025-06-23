@@ -1,20 +1,8 @@
 
-import { TrendingUp, Users, Clock, Shield, Zap, GitPullRequest } from "lucide-react";
+import { TrendingUp, Users, Shield, Zap, GitPullRequest } from "lucide-react";
 
 const Statistics = () => {
   const stats = [
-    {
-      icon: TrendingUp,
-      number: "80%",
-      label: "Reduction in QA Time",
-      description: "Teams cut manual testing cycles dramatically with predictive impact analysis"
-    },
-    {
-      icon: Clock,
-      number: "5 min",
-      label: "Average Setup Time",
-      description: "From connection to first AI review - no complex configuration needed"
-    },
     {
       icon: Users,
       number: "90%",
@@ -28,13 +16,13 @@ const Statistics = () => {
       description: "Comprehensive vulnerability detection across your entire codebase"
     },
     {
-      icon: GitPullRequest,
+      icon: Zap,
       number: "24/7",
-      label: "AI Code Reviews",
-      description: "Instant, consistent pull request analysis without human bottlenecks"
+      label: "AI Assistance",
+      description: "Instant, consistent support without human bottlenecks"
     },
     {
-      icon: Zap,
+      icon: TrendingUp,
       number: "500+",
       label: "Teams Trust Hikaflow",
       description: "Engineering teams worldwide rely on Hikaflow for confident releases"
@@ -62,7 +50,7 @@ const Statistics = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="group text-center animate-fade-in hover:scale-105 transition-transform duration-500" style={{animationDelay: `${index * 100}ms`}}>
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-emerald-500/30">
@@ -83,7 +71,7 @@ const Statistics = () => {
           ))}
         </div>
 
-        <div className="mt-16 text-center animate-fade-in" style={{animationDelay: '800ms'}}>
+        <div className="text-center animate-fade-in" style={{animationDelay: '800ms'}}>
           <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 max-w-3xl mx-auto hover:scale-105 transition-transform duration-500 hover:border-emerald-500/30">
             <h3 className="text-2xl font-bold text-white mb-4">
               "Hikaflow transformed our entire development workflow"
@@ -92,16 +80,25 @@ const Statistics = () => {
               "With over 24 years in tech and 10+ years leading engineering teams, I've seen many tools come and go. Hikaflow is different - it actually delivers on its promises. Our team velocity increased dramatically while maintaining zero production incidents. The AI insights are incredibly accurate and the living documentation feature alone saves us hours every week."
             </p>
             <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-700 p-1 hover:scale-110 transition-transform duration-300">
-                <img 
-                  src="/lovable-uploads/a455191c-386f-4369-9022-eb5e588c83ad.png" 
-                  alt="Azhar Hussain" 
-                  className="w-full h-full object-cover rounded-full"
-                />
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-700 p-1 hover:scale-110 transition-transform duration-300">
+                  <img 
+                    src="/lovable-uploads/a455191c-386f-4369-9022-eb5e588c83ad.png" 
+                    alt="Azhar Hussain" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
+                </div>
+                <div className="text-left">
+                  <div className="font-semibold text-white">Azhar Hussain</div>
+                  <div className="text-slate-300 text-sm">CTO, ChargeUp</div>
+                </div>
               </div>
-              <div className="text-left">
-                <div className="font-semibold text-white">Azhar Hussain</div>
-                <div className="text-slate-300 text-sm">CTO & Software Engineering Leader</div>
+              <div className="w-16 h-16 flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/0c0f1248-670d-40e8-8c92-e3e81037eb13.png" 
+                  alt="ChargeUp Logo" 
+                  className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300"
+                />
               </div>
             </div>
           </div>
