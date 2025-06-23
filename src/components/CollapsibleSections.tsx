@@ -3,6 +3,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AIModesSection from "./AIModesSection";
+import IntegrationSection from "./IntegrationSection";
 
 const CollapsibleSections = () => {
   const [openSections, setOpenSections] = useState<string[]>([]);
@@ -21,6 +22,12 @@ const CollapsibleSections = () => {
       title: "AI Capabilities",
       subtitle: "Explore our intelligent automation",
       component: <AIModesSection />
+    },
+    {
+      id: "integration",
+      title: "Get Started in Under 5 Minutes",
+      subtitle: "Seamless integration with your existing workflow",
+      component: <IntegrationSection />
     }
   ];
 

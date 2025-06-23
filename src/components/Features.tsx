@@ -2,8 +2,13 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { GitPullRequest, Shield, Brain, Zap, FileText, Users, TrendingUp, Clock } from "lucide-react";
+import { useState, useEffect } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
 const Features = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
   const features = [
     {
       icon: Brain,
@@ -63,6 +68,16 @@ const Features = () => {
     }
   ];
 
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on('select', () => {
+        setCurrentSlide(emblaApi.selectedScrollSnap());
+      });
+    }
+  }, [emblaApi]);
+
+  const totalSlides = Math.ceil(features.length / 3);
+
   return (
     <section id="features" className="py-24 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:32px_32px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
@@ -86,6 +101,7 @@ const Features = () => {
 
         <div className="max-w-6xl mx-auto">
           <Carousel
+            ref={emblaRef}
             opts={{
               align: "start",
               loop: true,
@@ -127,6 +143,22 @@ const Features = () => {
             <CarouselPrevious className="border-slate-600 bg-slate-800/50 text-slate-300 hover:bg-slate-700 hover:border-emerald-400" />
             <CarouselNext className="border-slate-600 bg-slate-800/50 text-slate-300 hover:bg-slate-700 hover:border-emerald-400" />
           </Carousel>
+
+          {/* Carousel Indicators */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => emblaApi?.scrollTo(index * 3)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  Math.floor(currentSlide / 3) === index
+                    ? 'bg-emerald-500 scale-110'
+                    : 'bg-slate-600 hover:bg-slate-500'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="mt-16 text-center animate-fade-in [animation-delay:800ms]">
