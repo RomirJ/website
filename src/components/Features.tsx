@@ -1,4 +1,3 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { GitPullRequest, Shield, Brain, Zap, FileText, Users, TrendingUp, Clock } from "lucide-react";
@@ -7,7 +6,11 @@ import useEmblaCarousel from "embla-carousel-react";
 
 const Features = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    loop: true,
+    dragFree: true,
+    containScroll: "trimSnaps"
+  });
 
   const features = [
     {
@@ -105,6 +108,8 @@ const Features = () => {
             opts={{
               align: "start",
               loop: true,
+              dragFree: true,
+              containScroll: "trimSnaps"
             }}
             className="w-full"
           >
@@ -143,22 +148,6 @@ const Features = () => {
             <CarouselPrevious className="border-slate-600 bg-slate-800/50 text-slate-300 hover:bg-slate-700 hover:border-emerald-400" />
             <CarouselNext className="border-slate-600 bg-slate-800/50 text-slate-300 hover:bg-slate-700 hover:border-emerald-400" />
           </Carousel>
-
-          {/* Carousel Indicators */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => emblaApi?.scrollTo(index * 3)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  Math.floor(currentSlide / 3) === index
-                    ? 'bg-emerald-500 scale-110'
-                    : 'bg-slate-600 hover:bg-slate-500'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
 
         <div className="mt-16 text-center animate-fade-in [animation-delay:800ms]">

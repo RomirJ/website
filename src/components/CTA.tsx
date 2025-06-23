@@ -38,7 +38,7 @@ const CTA = () => {
           </p>
 
           {/* Key Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 animate-fade-in [animation-delay:600ms]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 animate-fade-in [animation-delay:600ms]">
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 hover:border-emerald-500/30 hover:scale-110 transition-all duration-500">
               <div className="text-3xl font-bold text-emerald-400 mb-2">80%</div>
               <div className="text-slate-300">Reduction in QA Time</div>
@@ -46,10 +46,6 @@ const CTA = () => {
             <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 hover:border-emerald-500/30 hover:scale-110 transition-all duration-500">
               <div className="text-3xl font-bold text-emerald-400 mb-2">5 min</div>
               <div className="text-slate-300">Setup Time</div>
-            </div>
-            <div className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/50 rounded-lg p-6 hover:border-emerald-500/30 hover:scale-110 transition-all duration-500">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">24/7</div>
-              <div className="text-slate-300">AI Code Reviews</div>
             </div>
           </div>
 
