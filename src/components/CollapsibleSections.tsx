@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AIModesSection from "./AIModesSection";
-import IntegrationSection from "./IntegrationSection";
+import FAQSection from "./FAQSection";
 
 const CollapsibleSections = () => {
   const [openSections, setOpenSections] = useState<string[]>([]);
@@ -24,10 +24,10 @@ const CollapsibleSections = () => {
       component: <AIModesSection />
     },
     {
-      id: "integration",
-      title: "Get Started in Under 5 Minutes",
-      subtitle: "Seamless integration with your existing workflow",
-      component: <IntegrationSection />
+      id: "faq",
+      title: "Hikaflow FAQ",
+      subtitle: "Common questions and detailed answers",
+      component: <FAQSection />
     }
   ];
 
