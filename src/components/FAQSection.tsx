@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const FAQSection = () => {
   const [openItems, setOpenItems] = useState<string[]>([]);
@@ -193,50 +194,52 @@ const FAQSection = () => {
 
   return (
     <div className="p-8">
-      <div className="space-y-8">
-        {faqCategories.map((category, categoryIndex) => (
-          <div key={categoryIndex} className="space-y-4">
-            <h3 className="text-xl font-bold text-emerald-400 border-b border-slate-700 pb-3">
-              {category.category}
-            </h3>
-            <div className="space-y-3">
-              {category.items.map((item) => {
-                const isOpen = openItems.includes(item.id);
-                
-                return (
-                  <div key={item.id} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
-                    <button
-                      onClick={() => toggleItem(item.id)}
-                      className="w-full p-4 text-left flex items-center justify-between hover:bg-slate-700/30 transition-all duration-300"
-                    >
-                      <h4 className="text-white font-medium pr-4">
-                        {item.question}
-                      </h4>
-                      <div className="flex-shrink-0">
-                        {isOpen ? (
-                          <ChevronUp className="h-5 w-5 text-emerald-400 transition-transform duration-300" />
-                        ) : (
-                          <ChevronDown className="h-5 w-5 text-emerald-400 transition-transform duration-300" />
-                        )}
-                      </div>
-                    </button>
-                    
-                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                      isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                    }`}>
-                      <div className="px-4 pb-4 border-t border-slate-700/50 pt-4">
-                        <p className="text-slate-300 leading-relaxed whitespace-pre-line">
-                          {item.answer}
-                        </p>
+      <ScrollArea className="h-[600px] w-full">
+        <div className="space-y-8 pr-4">
+          {faqCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="space-y-4">
+              <h3 className="text-xl font-bold text-emerald-400 border-b border-slate-700 pb-3">
+                {category.category}
+              </h3>
+              <div className="space-y-3">
+                {category.items.map((item) => {
+                  const isOpen = openItems.includes(item.id);
+                  
+                  return (
+                    <div key={item.id} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
+                      <button
+                        onClick={() => toggleItem(item.id)}
+                        className="w-full p-4 text-left flex items-center justify-between hover:bg-slate-700/30 transition-all duration-300"
+                      >
+                        <h4 className="text-white font-medium pr-4">
+                          {item.question}
+                        </h4>
+                        <div className="flex-shrink-0">
+                          {isOpen ? (
+                            <ChevronUp className="h-5 w-5 text-emerald-400 transition-transform duration-300" />
+                          ) : (
+                            <ChevronDown className="h-5 w-5 text-emerald-400 transition-transform duration-300" />
+                          )}
+                        </div>
+                      </button>
+                      
+                      <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}>
+                        <div className="px-4 pb-4 border-t border-slate-700/50 pt-4">
+                          <p className="text-slate-300 leading-relaxed whitespace-pre-line">
+                            {item.answer}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </ScrollArea>
 
       <div className="mt-12 text-center">
         <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-500 hover:border-emerald-500/30">
