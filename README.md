@@ -1,73 +1,46 @@
-# Welcome to your Lovable project
 
-## Project info
+# Hikaflow Website
 
-**URL**: https://lovable.dev/projects/324d22c6-40a7-4de7-84ea-053730fa152e
+A modern website for Hikaflow built with React, TypeScript, and Tailwind CSS.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Responsive design with modern UI components
+- Contact form with Supabase integration
+- Newsletter signup functionality
+- FAQ section with collapsible items
+- GitHub Pages deployment ready
 
-**Use Lovable**
+## Local Development
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/324d22c6-40a7-4de7-84ea-053730fa152e) and start prompting.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
 
-Changes made via Lovable will be committed automatically to this repo.
+## Deployment
 
-**Use your preferred IDE**
+This website is configured to automatically deploy to GitHub Pages when changes are pushed to the main branch.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Manual Deployment Steps
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Push your code to GitHub
+2. Go to your repository settings
+3. Navigate to Pages section
+4. Select "GitHub Actions" as the source
+5. The site will be automatically built and deployed
 
-Follow these steps:
+## Supabase Integration
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+The website connects to Supabase to store:
+- Contact form submissions
+- Newsletter email signups
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+The database is configured with proper Row Level Security (RLS) policies to allow public form submissions while restricting data access to authenticated administrators.
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Environment
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
+- Node.js 18+
+- React 18
 - TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/324d22c6-40a7-4de7-84ea-053730fa152e) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Supabase
