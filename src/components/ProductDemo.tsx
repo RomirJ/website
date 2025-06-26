@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BarChart3, MessageSquare, Shield, Brain, GitPullRequest, Settings, FileText, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { withBase } from "@/lib/paths";
 
 const ProductDemo = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -12,49 +13,49 @@ const ProductDemo = () => {
       icon: BarChart3,
       title: "Analytics Dashboard",
       description: "Comprehensive overview of your repository health with real-time metrics, issue tracking, and quality trends.",
-      image: "/lovable-uploads/a92ccc88-ac3d-4b26-b022-f536a5914359.png",
+      image: withBase("lovable-uploads/a92ccc88-ac3d-4b26-b022-f536a5914359.png"),
       features: ["PR frequency tracking", "Code quality metrics", "Issue severity distribution"]
     },
     {
       icon: MessageSquare,
       title: "AI-Powered PR Reviews",
       description: "Intelligent pull request analysis with contextual comments and automated code quality checks.",
-      image: "/lovable-uploads/77ab2fa3-7309-4616-ba8a-f96f3adfa43b.png",
+      image: withBase("lovable-uploads/77ab2fa3-7309-4616-ba8a-f96f3adfa43b.png"),
       features: ["Automated PR comments", "Code issue detection", "Real-time feedback"]
     },
     {
       icon: GitPullRequest,
       title: "Impact Analysis",
       description: "Predict potential breakages and generate targeted test cases based on code changes and dependencies.",
-      image: "/lovable-uploads/45556d03-7548-4785-9ff1-3ecd189144e7.png",
+      image: withBase("lovable-uploads/45556d03-7548-4785-9ff1-3ecd189144e7.png"),
       features: ["Risk assessment scoring", "Flow impact tracking", "Automated test generation"]
     },
     {
       icon: Settings,
       title: "Customizable Security Settings",
       description: "Configure which security issues and code quality checks Hikaflow should flag for your team.",
-      image: "/lovable-uploads/893f8f32-1b52-4eb1-88ac-a5c6f2e0984a.png",
+      image: withBase("lovable-uploads/893f8f32-1b52-4eb1-88ac-a5c6f2e0984a.png"),
       features: ["Custom rule configuration", "Team-specific settings", "Compliance enforcement"]
     },
     {
       icon: Shield,
       title: "Security & Quality Reports",
       description: "Detailed code analysis reports covering security vulnerabilities, code quality metrics, and compliance.",
-      image: "/lovable-uploads/35750031-4430-4d12-ad55-ff1323ad9707.png",
+      image: withBase("lovable-uploads/35750031-4430-4d12-ad55-ff1323ad9707.png"),
       features: ["Security scoring", "Quality metrics", "Compliance tracking"]
     },
     {
       icon: Brain,
       title: "Project Assistant",
       description: "AI assistant with full codebase context, answering technical questions and providing guidance.",
-      image: "/lovable-uploads/3419483b-ef4a-46ca-bc0f-e42bf2ca9a18.png",
+      image: withBase("lovable-uploads/3419483b-ef4a-46ca-bc0f-e42bf2ca9a18.png"),
       features: ["Contextual Q&A", "Code explanations", "Multi-language support"]
     },
     {
       icon: FileText,
       title: "Living Documentation",
       description: "Automatically generated and maintained documentation that evolves with your codebase, keeping your team aligned.",
-      image: "/lovable-uploads/c847fa1b-9644-47f3-81d8-4739428ae4f2.png",
+      image: withBase("lovable-uploads/c847fa1b-9644-47f3-81d8-4739428ae4f2.png"),
       features: ["Auto-generated docs", "Real-time updates", "Team collaboration"]
     }
   ];
