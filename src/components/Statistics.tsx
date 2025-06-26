@@ -1,5 +1,6 @@
 
 import { TrendingUp, Users, Shield, Zap, GitPullRequest } from "lucide-react";
+import { withBase } from "@/lib/paths";
 
 const Statistics = () => {
   const stats = [
@@ -87,7 +88,7 @@ const Statistics = () => {
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 rounded-full overflow-hidden bg-slate-700 p-1 hover:scale-110 transition-transform duration-300">
                   <img 
-                    src="/lovable-uploads/a455191c-386f-4369-9022-eb5e588c83ad.png" 
+                    src={withBase("lovable-uploads/a455191c-386f-4369-9022-eb5e588c83ad.png")} 
                     alt="Azhar Hussain" 
                     className="w-full h-full object-cover rounded-full"
                   />
@@ -99,7 +100,7 @@ const Statistics = () => {
               </div>
               <div className="w-16 h-16 flex items-center justify-center">
                 <img 
-                  src="/lovable-uploads/0c0f1248-670d-40e8-8c92-e3e81037eb13.png" 
+                  src={withBase("lovable-uploads/0c0f1248-670d-40e8-8c92-e3e81037eb13.png")} 
                   alt="ChargeUp Logo" 
                   className="max-w-full max-h-full object-contain hover:scale-110 transition-transform duration-300"
                 />

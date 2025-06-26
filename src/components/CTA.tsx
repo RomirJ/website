@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, Play, CheckCircle, Zap } from "lucide-react";
+import { withBase } from "@/lib/paths";
 
 const CTA = () => {
   return (
@@ -13,7 +14,7 @@ const CTA = () => {
           {/* Logo */}
           <div className="flex justify-center mb-8 animate-fade-in">
             <img 
-              src="/lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png" 
+              src={withBase("lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png")} 
               alt="Hikaflow Logo" 
               className="h-12 w-auto opacity-90 hover:scale-110 transition-transform duration-500"
             />

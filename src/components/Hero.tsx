@@ -1,8 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Calendar, CheckCircle } from "lucide-react";
+import { withBase } from "@/lib/paths";
+
 const Hero = () => {
-  return <section id="hero" className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden pt-16">
+  return (
+    <section id="hero" className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden pt-16">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
@@ -64,7 +67,7 @@ const Hero = () => {
           <div className="lg:col-span-3 relative animate-fade-in [animation-delay:400ms] -mt-16 lg:-mt-24">
             <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 to-green-600/20 rounded-3xl blur-3xl animate-pulse"></div>
             <div className="relative bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-3xl p-6 hover:border-emerald-500/30 transition-all duration-500 hover:scale-105">
-              <img src="/lovable-uploads/e910e95d-3ed7-4a18-a018-c315f42aeacb.png" alt="Hikaflow Impact Analysis Dashboard" className="w-full rounded-2xl shadow-2xl" />
+              <img src={withBase("lovable-uploads/e910e95d-3ed7-4a18-a018-c315f42aeacb.png")} alt="Hikaflow Impact Analysis Dashboard" className="w-full rounded-2xl shadow-2xl" />
               <div className="absolute top-12 right-12 bg-emerald-500 text-white px-4 py-2 rounded-full text-sm font-medium animate-bounce">
                 Live Dashboard
               </div>
@@ -88,6 +91,8 @@ const Hero = () => {
           <ArrowRight className="h-6 w-6 text-slate-400 rotate-90" />
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

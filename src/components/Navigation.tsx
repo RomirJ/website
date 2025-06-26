@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { withBase } from "@/lib/paths";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +29,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img 
-              src="/lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png" 
+              src={withBase("lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png")} 
               alt="Hikaflow Logo" 
               className="h-16 w-auto hover:scale-105 transition-transform duration-300 animate-fade-in"
             />

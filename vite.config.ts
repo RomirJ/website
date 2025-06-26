@@ -19,5 +19,5 @@ export default defineConfig(({ command }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: process.env.NODE_ENV === 'production' ? '/website/' : '/',
+  base: process.env.VITE_BASE || (process.env.NODE_ENV === 'production' ? '/website/' : '/'),
 }));
