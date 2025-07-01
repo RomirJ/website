@@ -37,6 +37,10 @@ The website connects to Supabase to store:
 
 The database is configured with proper Row Level Security (RLS) policies to allow public form submissions while restricting data access to authenticated administrators.
 
+Environment variables `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are used
+to configure the Supabase client. Example values are provided in `.env` and
+`.env.production`.
+
 ## Environment
 
 - Node.js 18+
