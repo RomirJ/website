@@ -40,6 +40,7 @@ The database is configured with proper Row Level Security (RLS) policies to allo
 Environment variables `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are used
 to configure the Supabase client. Example values are provided in `.env` and
 `.env.production`.
+After updating your Supabase instance, run the migrations under `supabase/migrations` to ensure the row-level security policies are applied correctly.
 
 ## Environment
 
