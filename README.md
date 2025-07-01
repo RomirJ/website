@@ -35,7 +35,9 @@ The website connects to Supabase to store:
 - Contact form submissions
 - Newsletter email signups
 
-The database is configured with proper Row Level Security (RLS) policies to allow public form submissions while restricting data access to authenticated administrators.
+The database is configured with proper Row Level Security (RLS) policies to allow form submissions from both `anon` and `authenticated` roles while restricting read access to authenticated administrators.
+
+After updating the policies you may need to run `supabase db push` to apply the latest migration.
 
 Environment variables `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` are used
 to configure the Supabase client. Example values are provided in `.env` and
