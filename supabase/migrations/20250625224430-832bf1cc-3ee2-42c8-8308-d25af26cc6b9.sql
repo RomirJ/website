@@ -22,16 +22,16 @@ ALTER TABLE public.contact_submissions ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.newsletter_signups ENABLE ROW LEVEL SECURITY;
 
 -- Create policies to allow public access for insertions (since these are public forms)
-CREATE POLICY "Allow public contact submissions" 
-  ON public.contact_submissions 
-  FOR INSERT 
-  TO public
+CREATE POLICY "Allow public contact submissions"
+  ON public.contact_submissions
+  FOR INSERT
+  TO authenticated, anon
   WITH CHECK (true);
 
-CREATE POLICY "Allow public newsletter signups" 
-  ON public.newsletter_signups 
-  FOR INSERT 
-  TO public
+CREATE POLICY "Allow public newsletter signups"
+  ON public.newsletter_signups
+  FOR INSERT
+  TO authenticated, anon
   WITH CHECK (true);
 
 -- Create policies to allow reading for authenticated admin users only
