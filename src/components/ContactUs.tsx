@@ -45,8 +45,9 @@ const ContactUs = () => {
       setIsSubmitted(true);
       setFormData({ firstName: "", lastName: "", email: "", phone: "", message: "" });
       setTimeout(() => setIsSubmitted(false), 5000);
-    } catch (err) {
-      setError("Failed to send message. Please try again.");
+    } catch (err: any) {
+      const message = err?.message || "Failed to send message. Please try again.";
+      setError(message);
       console.error("Contact form error:", err);
     } finally {
       setIsSubmitting(false);
@@ -63,8 +64,11 @@ const ContactUs = () => {
       setIsNewsletterSubmitted(true);
       setNewsletterEmail("");
       setTimeout(() => setIsNewsletterSubmitted(false), 5000);
-    } catch (err) {
-      setNewsletterError("Failed to subscribe. Please try again.");
+    } catch (err: any) {
+      const message = err?.code === "23505"
+        ? "You are already subscribed with this email address."
+        : err?.message || "Failed to subscribe. Please try again.";
+      setNewsletterError(message);
       console.error("Newsletter signup error:", err);
     } finally {
       setIsNewsletterSubmitting(false);
