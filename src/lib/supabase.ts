@@ -29,31 +29,23 @@ export interface NewsletterSignup {
 
 // Database functions
 export const saveContactSubmission = async (data: Omit<ContactSubmission, 'id' | 'created_at'>) => {
-  const { data: result, error } = await supabase
+  const { error } = await supabase
     .from('contact_submissions')
-    .insert([data])
-    .select()
-    .single();
+    .insert([data]);
 
   if (error) {
     console.error('Error saving contact submission:', error);
     throw error;
   }
-
-  return result;
 };
 
 export const saveNewsletterSignup = async (email: string) => {
-  const { data: result, error } = await supabase
+  const { error } = await supabase
     .from('newsletter_signups')
-    .insert([{ email }])
-    .select()
-    .single();
+    .insert([{ email }]);
 
   if (error) {
     console.error('Error saving newsletter signup:', error);
     throw error;
   }
-
-  return result;
 };
