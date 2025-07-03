@@ -6,13 +6,22 @@ import { useNavigate } from "react-router-dom";
 const PrivacyPolicy = () => {
   const navigate = useNavigate();
 
+  const handleBack = () => {
+    // Try to go back in history, but fallback to home page if no history
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100">
       {/* Header */}
       <div className="pt-12 pb-12 bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="container mx-auto px-4">
           <Button
-            onClick={() => navigate(-1)}
+            onClick={handleBack}
             variant="ghost"
             className="mb-6 text-emerald-400 hover:text-emerald-300 hover:bg-slate-800"
           >
