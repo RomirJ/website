@@ -1,5 +1,4 @@
 
-import Navigation from "@/components/Navigation";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -9,10 +8,8 @@ const TermsOfService = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100">
-      <Navigation />
-      
       {/* Header */}
-      <div className="pt-24 pb-12 bg-gradient-to-b from-slate-900 to-slate-800">
+      <div className="pt-12 pb-12 bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="container mx-auto px-4">
           <Button
             onClick={() => navigate(-1)}
