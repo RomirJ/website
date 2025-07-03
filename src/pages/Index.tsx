@@ -8,6 +8,7 @@ import Integration from "@/components/Integration";
 import CollapsibleSections from "@/components/CollapsibleSections";
 import CTA from "@/components/CTA";
 import ContactUs from "@/components/ContactUs";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -31,6 +32,7 @@ const Index = () => {
       <div id="contact">
         <ContactUs />
       </div>
+      <Footer />
     </div>
   );
 };
