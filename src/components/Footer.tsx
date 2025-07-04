@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         <div className="text-center mt-4">
           <p className="text-slate-500 text-xs">
-            © 2024 Hikaflow. All rights reserved.
+            © 2025 Hikaflow. All rights reserved.
           </p>
         </div>
       </div>
