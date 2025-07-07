@@ -18,19 +18,20 @@ const Navigation = () => {
   const menuItems = [
     { label: "Home", id: "hero" },
     { label: "Features", id: "demo" },
-    { label: "Capabilities", id: "features" }
+    { label: "Capabilities", id: "features" },
+    { label: "Contact Us", id: "contact" }
   ];
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <img 
               src={withBase("lovable-uploads/f88f9ca8-439a-47e0-9636-fd54f124efe5.png")} 
               alt="Hikaflow Logo" 
-              className="h-12 w-auto hover:scale-105 transition-transform duration-300 animate-fade-in"
+              className="h-16 w-auto hover:scale-105 transition-transform duration-300 animate-fade-in"
             />
           </div>
 
@@ -52,7 +53,7 @@ const Navigation = () => {
               className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105 animate-fade-in"
               style={{animationDelay: `${menuItems.length * 100}ms`}}
             >
-              Try Free Now
+              Try Now
             </Button>
           </div>
 
@@ -87,7 +88,7 @@ const Navigation = () => {
                 onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
                 className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105"
               >
-                Try Free Now
+                Try Now
               </Button>
             </div>
           </div>
