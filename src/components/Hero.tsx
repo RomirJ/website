@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Calendar, CheckCircle, Rocket, Clock, Search } from "lucide-react";
 import { withBase } from "@/lib/paths";
@@ -14,8 +15,8 @@ const Hero = () => {
           {/* Left Column - Content (smaller, 2/5 width) */}
           <div className="lg:col-span-2 space-y-4">
             {/* Badge */}
-            <div className="inline-flex items-center bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-3 text-emerald-400 text-base font-medium">
-              <CheckCircle className="h-4 w-4 mr-2" />
+            <div className="inline-flex items-center bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-3 text-emerald-400 text-lg font-medium">
+              <CheckCircle className="h-5 w-5 mr-2" />
               Trusted by 500+ Teams
             </div>
 
@@ -34,22 +35,22 @@ const Hero = () => {
             </div>
 
             {/* New KPI Row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4 overflow-x-auto">
-              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-lg p-3 hover:border-emerald-500/30 hover:scale-105 transition-all duration-300 min-w-[200px] md:min-w-0">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-lg p-3 hover:border-emerald-500/30 hover:scale-105 transition-all duration-300">
                 <div className="flex items-center gap-2 mb-1">
                   <Rocket className="h-4 w-4 text-emerald-400" />
                   <div className="text-emerald-400 font-bold text-sm">2x Faster Releases</div>
                 </div>
                 <p className="text-slate-300 text-xs">Ship more often with full confidence</p>
               </div>
-              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-lg p-3 hover:border-emerald-500/30 hover:scale-105 transition-all duration-300 min-w-[200px] md:min-w-0">
+              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-lg p-3 hover:border-emerald-500/30 hover:scale-105 transition-all duration-300">
                 <div className="flex items-center gap-2 mb-1">
                   <Clock className="h-4 w-4 text-emerald-400" />
                   <div className="text-emerald-400 font-bold text-sm">Onboard to Ship in 30 Min</div>
                 </div>
                 <p className="text-slate-300 text-xs">New devs contribute on Day 1</p>
               </div>
-              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-lg p-3 hover:border-emerald-500/30 hover:scale-105 transition-all duration-300 min-w-[200px] md:min-w-0">
+              <div className="bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 rounded-lg p-3 hover:border-emerald-500/30 hover:scale-105 transition-all duration-300">
                 <div className="flex items-center gap-2 mb-1">
                   <Search className="h-4 w-4 text-emerald-400" />
                   <div className="text-emerald-400 font-bold text-sm">All Issues Caught Pre-Merge</div>
