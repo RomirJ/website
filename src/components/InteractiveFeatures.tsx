@@ -10,35 +10,35 @@ const InteractiveFeatures = () => {
       title: "2x Faster Releases",
       description: "Ship more often with full confidence",
       details: "Automated testing and quality assurance ensures your releases are always production-ready, allowing teams to deploy multiple times per day without fear of breaking changes.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/0c0f1248-670d-40e8-8c92-e3e81037eb13.png"
     },
     {
       icon: Clock,
       title: "Onboard to Ship in 30 Min",
       description: "New devs contribute on Day 1",
       details: "Comprehensive onboarding automation and intelligent code assistance gets new developers productive immediately, with full context of your codebase and workflows.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/45556d03-7548-4785-9ff1-3ecd189144e7.png"
     },
     {
       icon: Search,
       title: "All Issues Caught Pre-Merge",
       description: "Bugs, security, and complexity flagged early",
       details: "Advanced static analysis and AI-powered code review catches potential issues before they enter your main branch, preventing production incidents.",
-      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/77ab2fa3-7309-4616-ba8a-f96f3adfa43b.png"
     },
     {
       icon: Zap,
       title: "80% Faster QA",
       description: "Automated testing and quality assurance",
       details: "Intelligent test generation and automated quality checks reduce manual QA time while improving coverage and reliability.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/893f8f32-1b52-4eb1-88ac-a5c6f2e0984a.png"
     },
     {
       icon: Settings,
       title: "5 min Setup",
       description: "Quick integration with existing workflows",
       details: "Simple OAuth connection with your repositories gets you up and running in minutes, with no configuration or installation required.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
+      image: "/lovable-uploads/9aa55a16-b492-4755-8e53-549939699d38.png"
     }
   ];
 

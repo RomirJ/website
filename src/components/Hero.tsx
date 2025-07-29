@@ -70,14 +70,10 @@ const Hero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+          <div className="flex justify-center mb-6">
             <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 h-14 text-lg font-semibold group transition-all duration-300 shadow-xl shadow-emerald-500/25 hover:scale-105 px-8" onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}>
               <Calendar className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               Start 30 Day Free Trial
-            </Button>
-            <Button size="lg" variant="outline" className="border-emerald-500/50 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-200 hover:border-emerald-400 h-14 text-lg font-semibold group transition-all duration-300 hover:scale-105 px-8" onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}>
-            <Calendar className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Book Demo
             </Button>
           </div>
 

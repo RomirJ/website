@@ -193,9 +193,11 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="p-8">
-      <ScrollArea className="h-[600px] w-full">
-        <div className="space-y-8 pr-4">
+    <section className="py-16 bg-slate-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="space-y-8">
           {faqCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="space-y-4">
               <h3 className="text-xl font-bold text-emerald-400 border-b border-slate-700 pb-3">
@@ -206,7 +208,7 @@ const FAQSection = () => {
                   const isOpen = openItems.includes(item.id);
                   
                   return (
-                    <div key={item.id} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
+                    <div key={item.id} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-lg overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
                       <button
                         onClick={() => toggleItem(item.id)}
                         className="w-full p-4 text-left flex items-center justify-between hover:bg-slate-700/30 transition-all duration-300"
@@ -239,34 +241,45 @@ const FAQSection = () => {
             </div>
           ))}
         </div>
-      </ScrollArea>
 
-      <div className="mt-12 text-center">
-        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-500 hover:border-emerald-500/30">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Still Have Questions?
-          </h3>
-          <p className="text-slate-300 mb-6 leading-relaxed">
-            Get personalized answers and see how Hikaflow works with your specific codebase.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:scale-105"
-              onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
-            >
-              Try Hikaflow Free
-            </button>
-            <button 
-              className="border border-slate-600 text-slate-300 hover:bg-slate-700 hover:border-slate-500 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
-            >
-              Schedule Demo
-            </button>
+        <div className="mt-12 text-center">
+          <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:scale-105 transition-transform duration-500 hover:border-emerald-500/30">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Still Have Questions?
+            </h3>
+            <p className="text-slate-300 mb-6 leading-relaxed">
+              Get personalized answers and see how Hikaflow works with your specific codebase.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:scale-105"
+                onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
+              >
+                Try Hikaflow Free
+              </button>
+              <button 
+                className="border border-slate-600/50 text-slate-300 hover:bg-slate-700/50 hover:border-slate-500/50 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
+                onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
+              >
+                Schedule Demo
+              </button>
+            </div>
           </div>
         </div>
+
+        <div className="mt-16 text-center">
+          <a
+            href="https://www.linkedin.com/company/hikaflow"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-400 hover:text-emerald-400 transition-colors duration-300 text-sm"
+          >
+            Follow us on LinkedIn
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
