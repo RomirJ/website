@@ -104,35 +104,35 @@ const InteractiveFeatures = () => {
                   <div
                     key={index}
                     onClick={() => setSelectedFeature(index)}
-                    className={`cursor-pointer p-6 rounded-xl border transition-all duration-300 min-w-[320px] flex-shrink-0 ${
+                    className={`cursor-pointer p-4 rounded-xl border transition-all duration-300 min-w-[240px] flex-shrink-0 ${
                       isSelected
                         ? 'bg-emerald-500/10 border-emerald-500/50 shadow-lg shadow-emerald-500/20'
                         : 'bg-slate-800/50 border-slate-700/50 hover:border-slate-600 hover:bg-slate-800/70'
                     }`}
                   >
-                    <div className="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                    <div className="absolute top-2 right-2 bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-medium">
                       {feature.highlight}
                     </div>
-                    <div className="pt-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 transition-all duration-300 ${
+                    <div className="pt-3">
+                      <div className={`w-10 h-10 rounded-lg flex items-center justify-center mb-3 transition-all duration-300 ${
                         isSelected 
                           ? 'bg-emerald-500 text-white' 
                           : 'bg-slate-700 text-slate-300'
                       }`}>
-                        <FeatureIcon className="h-6 w-6" />
+                        <FeatureIcon className="h-5 w-5" />
                       </div>
-                      <h3 className={`text-lg font-bold mb-2 transition-colors duration-300 ${
+                      <h3 className={`text-base font-bold mb-2 transition-colors duration-300 ${
                         isSelected ? 'text-emerald-400' : 'text-white'
                       }`}>
                         {feature.title}
                       </h3>
-                      <p className="text-slate-300 text-sm mb-3 leading-relaxed">
+                      <p className="text-slate-300 text-xs mb-2 leading-relaxed">
                         {feature.description}
                       </p>
                       <ul className="space-y-1">
                         {feature.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-center text-slate-300">
-                            <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2 flex-shrink-0"></div>
+                            <div className="w-1 h-1 bg-emerald-500 rounded-full mr-2 flex-shrink-0"></div>
                             <span className="text-xs">{benefit}</span>
                           </li>
                         ))}
