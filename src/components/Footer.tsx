@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 py-8">
+    <footer className="bg-slate-900 border-t border-slate-800 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
           <Link
@@ -19,16 +19,10 @@ const Footer = () => {
             Terms of Service
           </Link>
         </div>
-        
-        <div className="pt-8 text-center">
-          <a
-            href="https://www.linkedin.com/company/hikaflow"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-400 hover:text-emerald-400 transition-colors duration-300 text-sm"
-          >
-            Follow us on LinkedIn
-          </a>
+        <div className="text-center mt-4">
+          <p className="text-slate-500 text-xs">
+            © 2025 Hikaflow. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
