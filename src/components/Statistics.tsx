@@ -5,25 +5,37 @@ import { withBase } from "@/lib/paths";
 const Statistics = () => {
   const stats = [
     {
+      icon: GitPullRequest,
+      number: "2x",
+      label: "Faster Releases",
+      description: "Ship more often with full confidence"
+    },
+    {
       icon: Users,
-      number: "90%",
-      label: "Faster Onboarding",
-      description: "New developers become productive in minutes, not months"
+      number: "30 Min",
+      label: "Onboard to Ship",
+      description: "New devs contribute on Day 1"
     },
     {
       icon: Shield,
-      number: "99.9%",
-      label: "Security Coverage",
-      description: "Comprehensive vulnerability detection across your entire codebase"
+      number: "100%",
+      label: "Issues Caught Pre-Merge", 
+      description: "Bugs, security, and complexity flagged early"
     },
     {
       icon: Zap,
-      number: "24/7",
-      label: "AI Assistance",
-      description: "Instant, consistent support without human bottlenecks"
+      number: "80%",
+      label: "Faster QA",
+      description: "Automated testing and quality assurance"
     },
     {
       icon: TrendingUp,
+      number: "5 min",
+      label: "Setup",
+      description: "Quick integration with existing workflows"
+    },
+    {
+      icon: Users,
       number: "500+",
       label: "Teams Trust Hikaflow",
       description: "Engineering teams worldwide rely on Hikaflow for confident releases"
@@ -51,7 +63,7 @@ const Statistics = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div key={index} className="group text-center animate-fade-in hover:scale-105 transition-transform duration-500" style={{animationDelay: `${index * 100}ms`}}>
               <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-slate-700 hover:border-emerald-500/30 h-full min-h-[280px] flex flex-col justify-between">

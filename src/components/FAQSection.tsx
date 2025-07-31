@@ -5,12 +5,22 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const FAQSection = () => {
   const [openItems, setOpenItems] = useState<string[]>([]);
+  const [isFAQOpen, setIsFAQOpen] = useState(false);
+  const [openCategories, setOpenCategories] = useState<string[]>([]);
 
   const toggleItem = (itemId: string) => {
     setOpenItems(prev => 
       prev.includes(itemId) 
         ? prev.filter(id => id !== itemId)
         : [...prev, itemId]
+    );
+  };
+
+  const toggleCategory = (category: string) => {
+    setOpenCategories(prev =>
+      prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
     );
   };
 
@@ -193,80 +203,96 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="p-8">
-      <ScrollArea className="h-[600px] w-full">
-        <div className="space-y-8 pr-4">
-          {faqCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="space-y-4">
-              <h3 className="text-xl font-bold text-emerald-400 border-b border-slate-700 pb-3">
-                {category.category}
-              </h3>
-              <div className="space-y-3">
-                {category.items.map((item) => {
-                  const isOpen = openItems.includes(item.id);
-                  
-                  return (
-                    <div key={item.id} className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-lg overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
-                      <button
-                        onClick={() => toggleItem(item.id)}
-                        className="w-full p-4 text-left flex items-center justify-between hover:bg-slate-700/30 transition-all duration-300"
-                      >
-                        <h4 className="text-white font-medium pr-4">
-                          {item.question}
-                        </h4>
-                        <div className="flex-shrink-0">
-                          {isOpen ? (
-                            <ChevronUp className="h-5 w-5 text-emerald-400 transition-transform duration-300" />
-                          ) : (
-                            <ChevronDown className="h-5 w-5 text-emerald-400 transition-transform duration-300" />
-                          )}
-                        </div>
-                      </button>
-                      
-                      <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                        isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-                      }`}>
-                        <div className="px-4 pb-4 border-t border-slate-700/50 pt-4">
-                          <p className="text-slate-300 leading-relaxed whitespace-pre-line">
-                            {item.answer}
-                          </p>
-                        </div>
+    <section className="py-16 bg-slate-900 relative overflow-hidden">
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Main FAQ Toggle */}
+        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 rounded-lg overflow-hidden hover:border-emerald-500/30 transition-all duration-300">
+          <button
+            onClick={() => setIsFAQOpen(!isFAQOpen)}
+            className="w-full p-6 text-left flex items-center justify-between hover:bg-slate-700/30 transition-all duration-300"
+          >
+            <h2 className="text-2xl font-bold text-white">FAQ</h2>
+            <div className="flex-shrink-0">
+              {isFAQOpen ? (
+                <ChevronUp className="h-6 w-6 text-emerald-400 transition-transform duration-300" />
+              ) : (
+                <ChevronDown className="h-6 w-6 text-emerald-400 transition-transform duration-300" />
+              )}
+            </div>
+          </button>
+          
+          <div className={`transition-all duration-500 ease-in-out overflow-hidden ${
+            isFAQOpen ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+          }`}>
+            <div className="p-6 border-t border-slate-700/50">
+              <div className="space-y-6">
+                {faqCategories.map((category, categoryIndex) => (
+                  <div key={categoryIndex} className="space-y-3">
+                    <button
+                      onClick={() => toggleCategory(category.category)}
+                      className="w-full text-left flex items-center justify-between p-3 rounded-lg hover:bg-slate-700/30 transition-all duration-300"
+                    >
+                      <h3 className="text-lg font-bold text-emerald-400">
+                        {category.category}
+                      </h3>
+                      <div className="flex-shrink-0">
+                        {openCategories.includes(category.category) ? (
+                          <ChevronUp className="h-5 w-5 text-emerald-400 transition-transform duration-300" />
+                        ) : (
+                          <ChevronDown className="h-5 w-5 text-emerald-400 transition-transform duration-300" />
+                        )}
+                      </div>
+                    </button>
+                    
+                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                      openCategories.includes(category.category) ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+                    }`}>
+                      <div className="space-y-2 ml-4">
+                        {category.items.map((item) => {
+                          const isOpen = openItems.includes(item.id);
+                          
+                          return (
+                            <div key={item.id} className="bg-slate-800/30 backdrop-blur-sm border border-slate-700/30 rounded-lg overflow-hidden hover:border-emerald-500/20 transition-all duration-300">
+                              <button
+                                onClick={() => toggleItem(item.id)}
+                                className="w-full p-3 text-left flex items-center justify-between hover:bg-slate-700/20 transition-all duration-300"
+                              >
+                                <h4 className="text-white font-medium pr-4 text-sm">
+                                  {item.question}
+                                </h4>
+                                <div className="flex-shrink-0">
+                                  {isOpen ? (
+                                    <ChevronUp className="h-4 w-4 text-emerald-400 transition-transform duration-300" />
+                                  ) : (
+                                    <ChevronDown className="h-4 w-4 text-emerald-400 transition-transform duration-300" />
+                                  )}
+                                </div>
+                              </button>
+                              
+                              <div className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                                isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                              }`}>
+                                <div className="px-3 pb-3 border-t border-slate-700/30 pt-3">
+                                  <p className="text-slate-300 leading-relaxed whitespace-pre-line text-sm">
+                                    {item.answer}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </ScrollArea>
-
-      <div className="mt-12 text-center">
-        <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:scale-105 transition-transform duration-500 hover:border-emerald-500/30">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Still Have Questions?
-          </h3>
-          <p className="text-slate-300 mb-6 leading-relaxed">
-            Get personalized answers and see how Hikaflow works with your specific codebase.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-emerald-500/25 hover:scale-105"
-              onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
-            >
-              Try Hikaflow Free
-            </button>
-            <button 
-              className="border border-slate-600 text-slate-300 hover:bg-slate-700 hover:border-slate-500 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
-              onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
-            >
-              Schedule Demo
-            </button>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
