@@ -19,10 +19,6 @@ const Index = () => {
         <InteractiveFeatures />
       </div>
       <Statistics />
-      <div id="contact">
-        <ContactUs />
-      </div>
-      <StillHaveQuestions />
       <div className="bg-slate-900 relative overflow-hidden">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center mb-16">
@@ -53,6 +49,10 @@ const Index = () => {
             </div>
           </div>
         </div>
+      </div>
+      <StillHaveQuestions />
+      <div id="contact">
+        <ContactUs />
       </div>
       <div id="faq">
         <FAQSection />
