@@ -67,7 +67,7 @@ const InteractiveFeatures = () => {
       title: "Real-Time Bug Diagnosis",
       description: "Links production errors to exact commits that introduced them and offers AI-generated code fixes.",
       benefits: ["Error-to-commit tracing", "AI-generated fixes", "Root cause analysis"],
-      highlight: "Instant error resolution",
+      highlight: "Bug resolution",
       image: "/lovable-uploads/77ab2fa3-7309-4616-ba8a-f96f3adfa43b.png"
     }
   ];
