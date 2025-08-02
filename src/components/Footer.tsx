@@ -5,9 +5,6 @@ import FAQSection from "@/components/FAQSection";
 const Footer = () => {
   return (
     <>
-      <div id="faq">
-        <FAQSection />
-      </div>
       <footer className="bg-slate-900 py-8">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">

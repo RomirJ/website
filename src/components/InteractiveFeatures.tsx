@@ -104,7 +104,7 @@ const InteractiveFeatures = () => {
                   <div
                     key={index}
                     onClick={() => setSelectedFeature(index)}
-                    className={`cursor-pointer p-2 rounded-xl border transition-all duration-300 min-w-[45px] flex-shrink-0 ${
+                    className={`cursor-pointer p-2 rounded-xl border transition-all duration-300 min-w-[120px] max-w-[120px] flex-shrink-0 ${
                       isSelected
                         ? 'bg-emerald-500/10 border-emerald-500/50 shadow-lg shadow-emerald-500/20'
                         : 'bg-slate-800/50 border-slate-700/50 hover:border-slate-600 hover:bg-slate-800/70'
