@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { GitPullRequest, Shield, Brain, Zap, FileText, Users, TrendingUp, Clock } from "lucide-react";
+import { useState, useRef } from "react";
+import { GitPullRequest, Shield, Brain, Zap, FileText, Users, TrendingUp, Clock, ChevronLeft, ChevronRight } from "lucide-react";
 
 const InteractiveFeatures = () => {
   const [selectedFeature, setSelectedFeature] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const features = [
     {
@@ -71,6 +72,18 @@ const InteractiveFeatures = () => {
     }
   ];
 
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -200, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 200, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="py-24 bg-gradient-to-b from-slate-800 to-slate-900 relative overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
@@ -94,8 +107,24 @@ const InteractiveFeatures = () => {
 
         <div className="max-w-7xl mx-auto">
           {/* Horizontal Scrollable Feature Cards */}
-          <div className="mb-12">
-            <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+          <div className="mb-12 relative">
+            {/* Left Arrow */}
+            <button
+              onClick={scrollLeft}
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600 rounded-full p-3 transition-all duration-300 backdrop-blur-sm"
+            >
+              <ChevronLeft className="h-5 w-5 text-white" />
+            </button>
+            
+            {/* Right Arrow */}
+            <button
+              onClick={scrollRight}
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-600 rounded-full p-3 transition-all duration-300 backdrop-blur-sm"
+            >
+              <ChevronRight className="h-5 w-5 text-white" />
+            </button>
+            
+            <div ref={scrollContainerRef} className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide px-12">
               {features.map((feature, index) => {
                 const FeatureIcon = feature.icon;
                 const isSelected = selectedFeature === index;
