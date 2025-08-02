@@ -1,13 +1,12 @@
 
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
-import ProductDemo from "@/components/ProductDemo";
-import Features from "@/components/Features";
+import TrustedCompanies from "@/components/TrustedCompanies";
+import InteractiveFeatures from "@/components/InteractiveFeatures";
 import Statistics from "@/components/Statistics";
-import Integration from "@/components/Integration";
-import CollapsibleSections from "@/components/CollapsibleSections";
-import CTA from "@/components/CTA";
+import FAQSection from "@/components/FAQSection";
 import ContactUs from "@/components/ContactUs";
+import StillHaveQuestions from "@/components/StillHaveQuestions";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,20 +14,12 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
       <Hero />
+      <TrustedCompanies />
       <div id="demo">
-        <ProductDemo />
-      </div>
-      <div id="features">
-        <Features />
+        <InteractiveFeatures />
       </div>
       <Statistics />
-      <Integration />
-      <div id="capabilities">
-        <CollapsibleSections />
-      </div>
-      <div id="cta">
-        <CTA />
-      </div>
+      <StillHaveQuestions />
       <div id="contact">
         <ContactUs />
       </div>
