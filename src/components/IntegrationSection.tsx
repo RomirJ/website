@@ -93,13 +93,13 @@ const IntegrationSection = () => {
               className="bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-600 hover:to-emerald-700 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg shadow-teal-500/25 hover:scale-105"
               onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
             >
-              Try Hikaflow Free
+              Join the Waitlist
             </button>
             <button 
               className="border border-slate-600 text-slate-300 hover:bg-slate-700 hover:border-slate-500 px-8 py-3 rounded-lg font-semibold transition-all duration-300 hover:scale-105"
               onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
             >
-              Book Demo
+              Try One Month For Free
             </button>
           </div>
         </div>

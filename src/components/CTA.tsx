@@ -75,7 +75,7 @@ const CTA = () => {
               onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
             >
               <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Start Free Trial Now
+              Join the Waitlist
             </Button>
             <Button 
               size="lg" 
@@ -84,7 +84,7 @@ const CTA = () => {
               onClick={() => window.open('https://calendly.com/romirjain/30min', '_blank')}
             >
               <Calendar className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Book Personal Demo
+              Try One Month For Free
             </Button>
           </div>
 
