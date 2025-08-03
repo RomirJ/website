@@ -5,7 +5,7 @@ import { withBase } from "@/lib/paths";
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden pt-12">
+    <section id="hero" className="min-h-screen bg-gradient-to-br from-slate-900/95 via-emerald-900/10 to-slate-900/95 relative overflow-hidden pt-12">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
@@ -34,7 +34,7 @@ const Hero = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 mb-4">
+            <div className="flex flex-col sm:flex-row gap-3 mb-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white border-0 h-12 text-base font-semibold group transition-all duration-300 shadow-xl shadow-emerald-500/25 hover:scale-105" onClick={() => window.location.href = '/waitlist'}>
                 <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
                 Join Waitlist

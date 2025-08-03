@@ -47,10 +47,10 @@ const Navigation = () => {
               </button>
             ))}
             <Button 
-              onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
+              onClick={() => window.location.href = '/waitlist'}
               className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105"
             >
-              Try Free Now
+              Join Waitlist
             </Button>
           </div>
 
@@ -81,10 +81,10 @@ const Navigation = () => {
             ))}
             <div className="px-4 pt-2">
               <Button 
-                onClick={() => window.open('https://app.hikaflow.com/', '_blank')}
+                onClick={() => window.location.href = '/waitlist'}
                 className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white font-semibold transition-all duration-300 hover:scale-105"
               >
-                Try Free Now
+                Join Waitlist
               </Button>
             </div>
           </div>
