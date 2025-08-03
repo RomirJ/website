@@ -5,7 +5,7 @@ import { withBase } from "@/lib/paths";
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen bg-gradient-to-br from-slate-900/95 via-emerald-900/10 to-slate-900/95 relative overflow-hidden pt-12">
+    <section id="hero" className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden pt-12">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />

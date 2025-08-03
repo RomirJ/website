@@ -2,11 +2,11 @@ import { CheckCircle, Clock, Shield, Users, Zap, Target } from "lucide-react";
 
 const TrustedBy = () => {
   const companies = [
-    { name: "AWS", logo: "🚀" },
-    { name: "Azure", logo: "☁️" },
-    { name: "Apple", logo: "🍎" },
-    { name: "Zendesk", logo: "🎯" },
-    { name: "Microsoft", logo: "🔷" },
+    { name: "AWS", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" },
+    { name: "Azure", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" },
+    { name: "Apple", logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" },
+    { name: "Zendesk", logo: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Zendesk_logo.svg" },
+    { name: "Microsoft", logo: "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" },
   ];
 
   const benefits = [
@@ -62,7 +62,14 @@ const TrustedBy = () => {
               key={index}
               className="flex items-center gap-3 px-6 py-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md transition-all duration-300"
             >
-              <span className="text-2xl">{company.logo}</span>
+              <img 
+                src={company.logo} 
+                alt={`${company.name} logo`}
+                className="w-8 h-8 object-contain"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
               <span className="text-lg font-semibold text-slate-700 dark:text-slate-300">
                 {company.name}
               </span>
