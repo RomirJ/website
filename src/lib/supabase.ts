@@ -27,6 +27,16 @@ export interface NewsletterSignup {
   created_at?: string;
 }
 
+export interface WaitlistSignup {
+  id?: string;
+  email: string;
+  importance: string;
+  linkedin?: string;
+  twitter?: string;
+  phone?: string;
+  created_at?: string;
+}
+
 // Database functions
 export const saveContactSubmission = async (data: Omit<ContactSubmission, 'id' | 'created_at'>) => {
   const { error } = await supabase
@@ -46,6 +56,17 @@ export const saveNewsletterSignup = async (email: string) => {
 
   if (error) {
     console.error('Error saving newsletter signup:', error);
+    throw error;
+  }
+};
+
+export const saveWaitlistSignup = async (data: Omit<WaitlistSignup, 'id' | 'created_at'>) => {
+  const { error } = await supabase
+    .from('waitlist_signups')
+    .insert([data]);
+
+  if (error) {
+    console.error('Error saving waitlist signup:', error);
     throw error;
   }
 };

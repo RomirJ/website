@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle, Mail, Users, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { saveWaitlistSignup } from "@/lib/supabase";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -25,8 +26,13 @@ const Waitlist = () => {
     setIsLoading(true);
 
     try {
-      // Simulate API call to Google Sheets
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await saveWaitlistSignup({
+        email: formData.email,
+        importance: formData.importance,
+        linkedin: formData.linkedin || undefined,
+        twitter: formData.twitter || undefined,
+        phone: formData.phone || undefined,
+      });
       
       setIsSubmitted(true);
       toast({
@@ -34,6 +40,7 @@ const Waitlist = () => {
         description: "We'll be in touch soon with exclusive early access.",
       });
     } catch (error) {
+      console.error('Error saving waitlist signup:', error);
       toast({
         title: "Oops! Something went wrong",
         description: "Please try again or contact us directly.",
